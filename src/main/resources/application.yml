@@ -1,10 +1,17 @@
 spring:
   profiles:
     active: dev
+  #Database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1234
 
 server:
   servlet:
     context-path: /platzi-market/api
+
+
 ---
 spring:
   config:
