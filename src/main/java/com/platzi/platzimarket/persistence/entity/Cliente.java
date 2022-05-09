@@ -1,10 +1,8 @@
 package com.platzi.platzimarket.persistence.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "clientes")
@@ -17,8 +15,11 @@ public class Cliente {
     private Long celular;
     private String direccion;
 
-    @Column(name="correo_electronico")
+    @Column(name = "correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 
     public String getId() {
         return id;
