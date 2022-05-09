@@ -3,7 +3,7 @@ spring:
     active: dev
   #Database
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/
     username: postgres
     password: 1234
 
@@ -17,6 +17,12 @@ spring:
   config:
     activate:
       on-profile: dev
+  #Database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: 1234
+
 server:
   port: 8090
 
