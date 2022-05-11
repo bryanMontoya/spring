@@ -1,3 +1,4 @@
+//Operaciones directamente desde db.s
 package com.platzi.platzimarket.persistence.crud;
 
 import com.platzi.platzimarket.persistence.entity.Producto;
