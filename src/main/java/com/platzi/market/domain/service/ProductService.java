@@ -1,7 +1,7 @@
-package com.platzi.platzimarket.domain.service;
+package com.platzi.market.domain.service;
 
-import com.platzi.platzimarket.domain.Product;
-import com.platzi.platzimarket.domain.repository.ProductRepository;
+import com.platzi.market.domain.Product;
+import com.platzi.market.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,11 +25,8 @@ public class ProductService {
         return productRepository.getByCategory(categoryId);
     }
 
-    public Optional<List<Product>> getScarseProducts(int quantity){
-        return productRepository.getScarseProducts(quantity);
-    }
-
     public Product save(Product product){
+
         return productRepository.save(product);
     }
 

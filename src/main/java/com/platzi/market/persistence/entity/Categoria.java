@@ -1,4 +1,4 @@
-package com.platzi.platzimarket.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,6 +20,14 @@ public class Categoria {
 
     public Integer getIdCategoria() {
         return idCategoria;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 
     public void setIdCategoria(Integer idCategoria) {

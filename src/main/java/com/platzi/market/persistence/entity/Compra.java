@@ -1,4 +1,4 @@
-package com.platzi.platzimarket.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

@@ -1,8 +1,7 @@
-package com.platzi.platzimarket.persistence.mapper;
+package com.platzi.market.persistence.mapper;
 
-import com.platzi.platzimarket.domain.Category;
-import com.platzi.platzimarket.domain.Product;
-import com.platzi.platzimarket.persistence.entity.Producto;
+import com.platzi.market.domain.Product;
+import com.platzi.market.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -10,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoryMaper.class}) //CategoryMaper para categoria.
+@Mapper(componentModel = "spring", uses = {CategoryMapper.class}) //CategoryMaper para categoria.
 public interface ProductMapper {
     @Mappings({
             @Mapping(source = "idProducto", target = "productId"),

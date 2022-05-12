@@ -1,10 +1,10 @@
-package com.platzi.platzimarket.persistence;
+package com.platzi.market.persistence;
 
-import com.platzi.platzimarket.domain.Product;
-import com.platzi.platzimarket.domain.repository.ProductRepository;
-import com.platzi.platzimarket.persistence.crud.ProductoCrudRepository;
-import com.platzi.platzimarket.persistence.entity.Producto;
-import com.platzi.platzimarket.persistence.mapper.ProductMapper;
+import com.platzi.market.domain.Product;
+import com.platzi.market.domain.repository.ProductRepository;
+import com.platzi.market.persistence.crud.ProductoCrudRepository;
+import com.platzi.market.persistence.entity.Producto;
+import com.platzi.market.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -45,7 +45,7 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public Product save(Product product) {
         Producto producto = mapper.toProducto(product);
-        return mapper.toProduct(productoCrudRepository.save((producto)));
+        return mapper.toProduct(productoCrudRepository.save(producto));
     }
 
     @Override

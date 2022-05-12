@@ -1,4 +1,4 @@
-package com.platzi.platzimarket.persistence.entity;
+package com.platzi.market.persistence.entity;
 
 //Clase que mapea clase de la bd.
 import javax.persistence.*;
@@ -16,18 +16,26 @@ public class Producto {
     private String nombre;
 
     @Column(name = "id_categoria")
-    private String idCategoria;
+    private Integer idCategoria;
 
     @Column(name = "codigo_barras" )
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private double precioVenta;
+    private Double precioVenta;
 
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
@@ -49,11 +57,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getIdCategoria() {
+    public Integer getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(String idCategoria) {
+    public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
 
@@ -65,11 +73,11 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public double getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
