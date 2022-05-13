@@ -1,4 +1,9 @@
 spring:
+  config:
+    activate:
+      on-profile: dev
+---
+spring:
   profiles:
     active: dev
   #Database
@@ -6,24 +11,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/
     username: postgres
     password: 1234
-
 server:
   servlet:
     context-path: /platzi-market/api
-
-
----
-spring:
-  config:
-    activate:
-      on-profile: dev
-  #Database
-  datasource:
-    url: jdbc:postgresql://localhost:5432/
-    username: postgres
-    password: 1234
-
-server:
   port: 8090
 
 ---
@@ -31,6 +21,12 @@ spring:
   config:
     activate:
       on-profile: pdn
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: 1234
 server:
+  servlet:
+    context-path: /platzi-market/api
   port: 80
 ---
