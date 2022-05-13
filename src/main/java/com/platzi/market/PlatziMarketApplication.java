@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@OpenAPIDefinition //Swagger
+@OpenAPIDefinition //Swagger http://localhost:8090/platzi-market/api/swagger-ui/index.html
 @SpringBootApplication
 public class PlatziMarketApplication {
 
