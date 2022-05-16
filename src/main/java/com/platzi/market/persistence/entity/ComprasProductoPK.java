@@ -4,10 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-//CLase para configurar claves primarias de Entity ComprasProducto.
 @Embeddable
 public class ComprasProductoPK implements Serializable {
-
     @Column(name = "id_compra")
     private Integer idCompra;
 

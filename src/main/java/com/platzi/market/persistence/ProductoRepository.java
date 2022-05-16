@@ -11,18 +11,18 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository //Clase que interactúa con la bd.
+@Repository
 public class ProductoRepository implements ProductRepository {
-    @Autowired //Control a spring para que cree esas instancias.
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
 
     @Autowired
     private ProductMapper mapper;
 
     @Override
-    public List<Product> getAll(){
-        List<Producto> productos =  (List<Producto>) productoCrudRepository.findAll();
-        return mapper.toProducts(productos); //Se utiliza el mapper.
+    public List<Product> getAll() {
+        List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
+        return mapper.toProducts(productos);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ProductoRepository implements ProductRepository {
 
     @Override
     public Optional<List<Product>> getScarseProducts(int quantity) {
-        Optional <List<Producto>> productos =  productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
+        Optional<List<Producto>> productos = productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
         return productos.map(prods -> mapper.toProducts(prods));
     }
 
@@ -49,7 +49,7 @@ public class ProductoRepository implements ProductRepository {
     }
 
     @Override
-    public void delete(int productId){
+    public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
 }

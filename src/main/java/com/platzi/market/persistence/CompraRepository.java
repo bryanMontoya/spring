@@ -2,8 +2,8 @@ package com.platzi.market.persistence;
 
 import com.platzi.market.domain.Purchase;
 import com.platzi.market.domain.repository.PurchaseRepository;
-import com.platzi.market.persistence.entity.Compra;
 import com.platzi.market.persistence.crud.CompraCrudRepository;
+import com.platzi.market.persistence.entity.Compra;
 import com.platzi.market.persistence.mapper.PurchaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,9 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository //Se va a comunicar directamente con bd.
+@Repository
 public class CompraRepository implements PurchaseRepository {
-
     @Autowired
     private CompraCrudRepository compraCrudRepository;
 
