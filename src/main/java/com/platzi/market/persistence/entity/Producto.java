@@ -1,16 +1,14 @@
 package com.platzi.market.persistence.entity;
 
-//Clase que mapea clase de la bd.
 import javax.persistence.*;
 
 @Entity
-//Porque se llama diferente en la clase vs la tabla.
 @Table(name = "productos")
 public class Producto {
 
-    @Id //Clave primaria sencilla.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Genere valor de manera automática.
-    @Column(name = "id_producto") //Porque se llama diferente en la clase y en la tabl.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
     private Integer idProducto;
 
     private String nombre;
@@ -18,7 +16,7 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column(name = "codigo_barras" )
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 
     @Column(name = "precio_venta")
@@ -28,14 +26,6 @@ public class Producto {
     private Integer cantidadStock;
 
     private Boolean estado;
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
@@ -95,5 +85,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

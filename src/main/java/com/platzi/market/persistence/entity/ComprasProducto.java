@@ -5,9 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "compras_productos")
 public class ComprasProducto {
-
-    @EmbeddedId //Clave primaria compuesta dada por otra clase.
+    @EmbeddedId
     private ComprasProductoPK id;
+
     private Integer cantidad;
     private Double total;
     private Boolean estado;
@@ -49,6 +49,10 @@ public class ComprasProducto {
         return estado;
     }
 
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
     public Compra getCompra() {
         return compra;
     }
@@ -63,9 +67,5 @@ public class ComprasProducto {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }
-
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
     }
 }
